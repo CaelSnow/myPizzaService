@@ -1,0 +1,376 @@
+/**
+ * General styling
+ */
+* {
+    font-family: "Helvetica Neue",Arial,sans-serif;
+}
+
+/*html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}*/
+
+.btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 0.5em 1em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    transition: .5s background-color;
+}
+.btn:hover {
+    background-color: #3d8d41;
+}
+.btn:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+input[type="text"] {
+    font-size: 1em;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+}
+.main .background {
+    width: 100%;
+    height: 100%;
+    background-image: url("../pizza.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+.main .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 5px;
+    background-color: transparent;
+    width: 80%;
+    height: 80%;
+}
+.main h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+.main h1:after {
+    content: ' ';
+    display: block;
+    border: 1px solid #6fb371;
+    margin-top: 20px;
+}
+
+.main .content .left {
+    float: left;
+    width: 50%;
+    height: calc(100% - 70px);
+}
+.main .content .right {
+    float: right;
+    width: 50%;
+    height: calc(100% - 70px);
+}
+
+@media (max-width: 800px) {
+    .main .content .left, .main .content .right {
+        width: 100%;
+        height: 30%;
+        float: left;
+    }
+}
+/* Media queries to adjust styles for smaller screen sizes */
+@media screen and (max-width: 600px) {
+    /* Adjusts the font size for smaller screens */
+    body {
+        font-size: 14px;
+    }
+
+    /* Hides the menu section on smaller screens */
+    section {
+        display: none;
+    }
+    .main .content .left, .main .content .right {
+        width: 70%;
+        height: 20%;
+        float: left;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    /* Adjusts the font size for even smaller screens */
+    body {
+        font-size: 12px;
+    }
+    .main .content .left, .main .content .right {
+        width: 50%;
+        height: 15%;
+        float: left;
+    }
+}
+
+/* Flex item for the order form */
+form {
+    flex: 1 100%;
+}
+
+/* Flex item for each pizza item */
+.pizza {
+    flex: 1 0 300px;
+    margin: 10px;
+}
+
+/* Flex container for the entire website */
+body {
+    display: flex;
+    flex-wrap: wrap;
+}
+/* Flex container for the menu section */
+section {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 100%;
+}
+/**
+ * Admin page
+ */
+.admin-overview ul {
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+}
+.admin-overview ul li {
+    height: 150px;
+    width: 200px;
+    background-color: black;
+    border-radius: 5px;
+    float: left;
+    margin: 40px 20px;
+}
+.admin-overview ul li a {
+    text-decoration: none;
+}
+.admin-overview ul li img {
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transition: .5s opacity;
+}
+.admin-overview ul li span {
+    color: white;
+    margin-top: -5px;
+    display: block;
+    text-align: center;
+    font-size: 2em;
+    background: #c2c2c2;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: .5s opacity;
+}
+
+/**
+ * Customer page
+ */
+.kunde .new_order {
+    margin-top: 40px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/**
+ * Order page
+ */
+.pizza_select {
+    overflow: auto;
+}
+.pizza_select .pizza {
+    width: 40%;
+    margin: 0 5% 20px;
+    float: left;
+    text-align: center;
+    background-color: #f6f6f6;
+    box-shadow: -2px 2px 10px 0 rgba(68,68,68,0.4);
+    cursor: pointer;
+    opacity: 0.6;
+    transition: .5s opacity;
+}
+.pizza_select .pizza:hover {
+    opacity: 1;
+}
+.pizza_select .pizza .img {
+    width: 150px;
+    height: 150px;
+    background-color: gray;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.pizza_select .pizza .img.vegetaria {
+    background-image: url("../images/vegetaria.png");
+}
+.pizza_select .pizza .img.salami {
+    background-image: url("../images/salami.png");
+}
+.pizza_select .pizza .img.spinat_huenchen {
+    background-image: url("../images/hawaii.png");
+}
+.pizza_select .pizza .body {
+    padding: 10px 20px 20px;
+    height: 15px;
+}
+.pizza_select .pizza .pizza_name {
+    font-size: 1.2em;
+    float: left;
+}
+.pizza_select .pizza .pizza_price {
+    font-weight: 300;
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1.3em;
+    float: right;
+}
+.pizza_select .pizza .pizza_price:after {
+    padding-left: 5px;
+    content: '€';
+}
+form.order {
+    height: 100%;
+}
+form.order textarea {
+    width: 100%;
+    height: 150px;
+}
+form.order label {
+    font-size: 1.5em;
+}
+.pizza_order_cart_box {
+    height: 50%;
+    overflow: auto;
+    border: 1px solid black;
+}
+.pizza_order_cart_box .pizza_order {
+    padding: 10px 20px;
+    border-bottom: 1px solid gray;
+}
+.pizza_order_cart_box .pizza_order:hover {
+    background-color: lightgray;
+}
+.pizza_order_cart_box .pizza_order.selected {
+    background-color: lightblue;
+}
+.pizza_order_cart_box .pizza_order:last-of-type {
+    border-bottom: none;
+}
+.pizza_order_cart_box .pizza_order .pizza_order_checkbox {
+    margin-right: 20px;
+}
+.pizza_order_cart_box .pizza_order .pizza_order_price {
+    float: right;
+}
+.delete_order, .delete_order_selected {
+    margin-top: 10px;
+    padding: 0.7em;
+    font-size: 0.7em;
+}
+
+/**
+ * Delivery Page
+ */
+.fahrer .kunde {
+    width: 40%;
+    margin: 0 5% 20px;
+    float: left;
+    text-align: center;
+    background-color: #f6f6f6;
+    box-shadow: -2px 2px 10px 0 rgba(68,68,68,0.4);
+}
+.fahrer .kunde table {
+    margin: 0 auto;
+}
+
+.navbar {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.burger-menu {
+    cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin:0 10px;
+}
+
+.nav-links li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+}

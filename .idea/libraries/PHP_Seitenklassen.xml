@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="PHP_Seitenklassen">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/Demos/PHP/Seitenklassen/PHP_Seitenklassen.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
